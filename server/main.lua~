@@ -55,7 +55,7 @@ end
 
 function shoot(user, update)
     if user.firecooldown < 0 then
-        user.firecooldown = user.firecooldown + 1
+        user.firecooldown = user.firecooldown + user.firerate
         user.bullets = user.bullets + 1
         if user.bullets == 11 then user.bullets = 1 end
         local bulletSpeed = 0.1

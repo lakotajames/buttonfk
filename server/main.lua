@@ -51,6 +51,7 @@ function createuser(username)
     user.bullets = 0
     user.firerate = 1
     user.firecooldown = 0
+    user.builds = 0
 end
 
 function shoot(user, update)
@@ -173,13 +174,15 @@ end
 function createstation(user)
     local x = user.body:getX()
     local y = user.body:getY()
-    objects.station = {}
-    objects.station.size = 300 --???
-    objects.station.body = love.physics.newBody(world, x, y, "dynamic")
-    objects.station.body:setMass(2500)
-    objects.station.shape = love.physics.newCircleShape(150)
-    objects.station.fixture = love.physics.newFixture(objects.station.body, objects.station.shape)
-    objects.station.img = "ssv"
+    user.builds = user.builds + 1
+    local station = user.name .. "_s_" .. user.builds
+    objects[station] = {}
+    objects[station].size = 290 --???
+    objects[station].body = love.physics.newBody(world, x, y, "dynamic")
+    objects[station].body:setMass(2500)
+    objects[station].shape = love.physics.newCircleShape(150)
+    objects[station].fixture = love.physics.newFixture(objects[station].body, objects[station].shape)
+    objects[station].img = "ssv"
     
 end
 
