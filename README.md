@@ -1,1 +1,1 @@
-Some sort of spaceship based game.
+Some sort of spaceship based game. Very pre-alpha.
