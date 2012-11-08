@@ -21,7 +21,7 @@ function love.load()
     test = ""
     world = {}
     t = 0
-    update = {command = update}
+    update = {command = "update"}
     updaterate = 1/30
     
     xres = 800
